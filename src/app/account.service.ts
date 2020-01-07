@@ -1,7 +1,7 @@
 import { LoggingService } from "./logging.service";
 import { Injectable, EventEmitter } from "@angular/core";
 //you don't add injecable to a service that you want to inject but to the service that is getting inject by another service
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class AccountsService{
     accounts = [
         {
