@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import{ LoggingService} from '../logging.service'
 @Component({
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
@@ -13,6 +13,8 @@ export class NewAccountComponent {
       name: accountName,
       status: accountStatus
     });
-    console.log('A server status changed, new status: ' + accountStatus);
+    //This works but is wrong on how to use a service in angular
+    const service = new LoggingService();
+    service.logStatusChange(accountStatus);
   }
 }
